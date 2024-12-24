@@ -1,0 +1,294 @@
+/* Main Container */
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* 將子元素水平居中 */
+    align-items: center; /* 如果需要，這也會讓子元素在垂直方向上居中 */
+    flex-wrap: wrap; /* 允許換行 */
+    width: 100%;
+    max-width: 1200px;
+
+    min-height: 100vh;
+    margin: 2em auto; /* 設置上下距離為 2em，左右自動對齊 */
+}
+
+.checkout-container {
+    display: inline-block;
+    vertical-align: middle;
+    width: 80%;
+    padding: 20px 20px 0 20px; /* 移除底部內距 */
+    box-sizing: border-box;
+    background-color: #e2e2e2;
+    border-radius: 5px; /* 頂部圓角仍保留 */
+   
+    margin-bottom: 20px; /* 設置和下一個格子的間隔 */
+}
+.checkout-container h2 {
+    border-bottom: 4px solid #ffffff; /* 添加灰色水平線 */
+  
+}
+
+.checkout-container > div {
+    border-bottom: 4px solid #ffffff; /* 添加灰色水平線 */
+  
+}
+
+.checkout-container > div:last-child {
+    border-bottom: none; /* 最後一個子元素不需要線條 */
+}
+
+
+
+.summary-container {
+
+    display: flex;
+    flex-direction: row; /* 設定橫向排列 */
+    align-items: center; /* 垂直方向對齊到中心 */
+    justify-content: space-between; /* 子元素分散在左右兩側 */
+    margin-bottom: 20px;
+    width: 100%; /* 確保容器寬度填滿父元素 */
+}
+
+.item-count {
+    order: 1; /* 保持在左側，實際上可省略 */
+    margin-left: 10px; /* 左側增加一些間距 */
+    color: rgb(152, 152, 152); /* 設置文字顏色為白色 */
+}
+
+.sub-total {
+    order: 2; /* 保持在右側，實際上可省略 */
+    margin-right: 10px; /* 右側增加一些間距 */
+}
+
+
+#cart-items {
+    display: flex; /* 讓內部項目橫向並排 */
+    flex-wrap: wrap; /* 當圖片過多時換行 */
+    gap: 10px; /* 設定圖片之間的間距 */
+    margin-top: 20px;
+    width: 100%;
+}
+
+/* 商品圖片樣式 */
+.itempic {
+    flex: 0 1 calc(25% - 10px); /* 每張圖片寬度佔 25%，並考慮間距 */
+    box-sizing: border-box; /* 包括內外距在計算內 */
+}
+
+/* 商品圖片本身 */
+.itempic img {
+    width: 100pt; /* 讓圖片填滿容器 */
+    height: 150pt; /* 保持比例 */
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+
+
+
+#address-section{
+    display: inline-block;
+    vertical-align: middle;
+    width: 80%;
+    padding: 20px; /* 移除底部內距 */
+    box-sizing: border-box;
+    background-color: #e2e2e2;
+    border-radius: 5px; /* 頂部圓角仍保留 */
+    margin-bottom: 20px; /* 設置和下一個格子的間隔 */
+    flex-direction: column; /* 元素垂直排列 */
+    gap: 10px; /* 使元素之間有一定的間隔 */
+ 
+}
+#address-section h2 {
+    border-bottom: 4px solid #ffffff; /* 添加灰色水平線 */
+}
+
+#address-display {
+    position: relative; /* 為了能夠定位 Change 按鈕 */
+}
+
+
+#change-address {
+    position: absolute;
+
+    top: 2%;
+    right: 2%;
+
+    padding: 10px 20px;
+    background-color: #808080; /* 設置灰色背景 */
+    color: white; /* 文字顏色為白色 */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+
+#change-address:hover {
+    background-color: #606060; /* 懸停時變為更深的灰色 */
+}
+
+#address-section label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+#address-section input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+
+  
+ 
+
+/* Shipping Option */
+.shipping-option {
+    display: inline-block;
+    vertical-align: middle;
+    width: 80%;
+    padding: 20px; /* 移除底部內距 */
+    box-sizing: border-box;
+    background-color: #e2e2e2;;
+    border-radius: 5px; /* 頂部圓角仍保留 */
+   
+    margin-bottom: 20px; /* 設置和下一個格子的間隔 */
+}
+.shipping-option h2 {
+    
+    border-bottom: 4px solid #ffffff; /* 添加灰色水平線 */
+}
+
+.shipping-options {
+    margin-top: 10px; /* 調整選項和標題的間距 */
+}
+
+.shipping-options label {
+    display: block; /* 使每個選項佔據一行 */
+    padding: 5px 0; /* 給每個選項加些內距 */
+    cursor: pointer; /* 當懸停在選項上時顯示手型 */
+}
+
+.shipping-options input[type="radio"] {
+    margin-right: 10px; /* 在選項文字和單選框之間加點距離 */
+}
+
+.total {
+    display: inline-block;
+    vertical-align: middle;
+    width: 80%;
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: #e2e2e2;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.total h2 {
+    border-bottom: 4px solid #ffffff;
+}
+
+.price_check {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
+
+.price_check div {
+    margin-bottom: 10px;
+}
+
+#totalAmountWrapper {
+    text-align: right; /* 將文本對齊到右邊 */
+}
+
+#totalAmount {
+    font-size: 18px;
+    font-weight: bold;
+   
+}
+
+/* 僅在 TOTAL TO PAY 下方的線條 */
+.total h2 + .price_check {
+    border-bottom: 4px solid #ffffff;
+}
+
+/* Payment Section */
+.payment {
+    display: inline-block;
+    vertical-align: middle;
+    width: 80%;
+    padding: 20px; /* 移除底部內距 */
+    box-sizing: border-box;
+    background-color: #e2e2e2;;
+    border-radius: 5px; /* 頂部圓角仍保留 */
+ 
+    margin-bottom: 20px; /* 設置和下一個格子的間隔 */
+}
+.payment h2 {
+    
+    border-bottom: 4px solid #ffffff; /* 添加灰色水平線 */
+}
+.payment label {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.payment input[type="radio"] {
+    margin-right: 10px;
+}
+
+.payment-form {
+    background-color: #ffffff;
+    padding: 20px;
+    margin-top: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: none;
+}
+
+.payment-form h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.payment-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.payment-form input[type="text"],
+.payment-form input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+
+/* Button Styling */
+.buy-now {
+    display: block;
+    width: 20;
+    padding: 10px;
+    background-color: #999;
+    color: white;
+    font-size: 18px;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.buy-now:hover {
+    background-color: #000000; /* 修改為更亮眼的綠色 */
+    color: white; /* 確保文字仍然清晰 */
+}

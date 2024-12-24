@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clothing Shop</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='/css/global.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='/css/favorite.css')}}">
+    <!-- Add Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <!-- Logo Section -->
+        <div class="logo">
+            <a href="category">
+                <h1>Polaritique</h1>
+            </a>
+        </div>         
+
+        <!-- Navigation Section -->
+        <nav class="nav-buttons">
+            <button class="nav-btn" data-gender="woman">W</button>
+            <button class="nav-btn" data-gender="man">M</button>
+        </nav>
+
+        <!-- Search Bar Section -->
+
+        <!-- Icons Section (Profile, Like, Bag) -->
+        <div class="icons">
+            <i class="fas fa-user" id="profile-icon"></i>
+            <i class="fas fa-heart" id="like-icon"></i>
+            <i class="fas fa-shopping-bag" id="bag-icon"></i>
+        </div>
+    </header>
+
+    <!-- Categories Section (Initially Hidden) -->
+    <section class="categories hidden" id="categories">
+        <button class="category" data-category="tops">Tops</button>
+        <button class="category" data-category="bottoms">Bottoms</button>
+        <button class="category" data-category="outerwear">Outerwear</button>
+        <button class="category" data-category="dresses">Dresses</button>
+        <button class="category" data-category="activewear">Activewear</button>
+    </section>
+
+
+    <div class="breadcrumb" id="breadcrumb">
+        <!-- Breadcrumb links will be dynamically generated -->
+    </div>
+    
+
+    <main>
+        <div id="favorites" class="product-container">
+            <!-- Products will be dynamically added here -->
+        </div>
+        
+        
+    </main>
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Polaritique. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="about">About Us</a>
+                <a href="contact">Contact</a>
+                <a href="privacy-policy">Privacy Policy</a>
+                <a href="terms">Terms & Conditions</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- External JavaScript Files -->
+    <script src="{{url_for('static', filename='/js/global.js')}}"></script>  <!-- Include global.js first -->
+    <script src="{{url_for('static', filename='/js/favorite.js')}}"></script> <!-- Then include category.js -->
+    
+</body>
+
+
+</html>

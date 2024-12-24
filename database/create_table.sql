@@ -1,0 +1,158 @@
+CREATE TABLE IF NOT EXISTS IMAGE (
+	filename VARCHAR(20) NOT NULL,
+	path VARCHAR(50) NOT NULL,
+	PRIMARY KEY(filename)
+);
+
+CREATE TABLE IF NOT EXISTS CLOTHES (
+	clothes_id BIGINT NOT NULL,
+	name VARCHAR(20) NOT NULL,
+	part CHAR NOT NULL,
+	gender CHAR NOT NULL,
+	price INT NOT NULL,
+	description VARCHAR(50),
+	PRIMARY KEY(clothes_id),
+	CHECK(price >= 0)
+);
+
+CREATE TABLE IF NOT EXISTS CLOTHES_COLOR (
+	clothes_id BIGINT NOT NULL,
+	color VARCHAR(2) NOT NULL,
+	image_filename VARCHAR(20) NOT NULL DEFAULT('default_img.png'),
+	PRIMARY KEY(clothes_id, color),
+	FOREIGN KEY(clothes_id) REFERENCES CLOTHES(clothes_id)
+		ON DELETE CASCADE
+		ON UPDATE CASCADE,
+	FOREIGN KEY(image_filename) REFERENCES IMAGE(filename)
+		ON DELETE SET DEFAULT
+		ON UPDATE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS CLOTHES_COLOR_SIZE (
+	clothes_id BIGINT NOT NULL,
+	color VARCHAR(2) NOT NULL,
+	size VARCHAR(2) NOT NULL,
+	stock_qty INT NOT NULL,
+	PRIMARY KEY(clothes_id, color, size),
+	FOREIGN KEY(clothes_id, color) REFERENCES CLOTHES_COLOR(clothes_id, color)
+		ON DELETE CASCADE
+		ON UPDATE CASCADE,
+	CHECK(stock_qty >= 0)
+);
+
+CREATE TABLE IF NOT EXISTS "user" (
+	user_id BIGINT NOT NULL,
+	fname VARCHAR(10) NOT NULL,
+	lname VARCHAR(10) NOT NULL,
+	password VARCHAR(20) NOT NULL,
+	phone VARCHAR(20),
+	email VARCHAR(40),
+	bdate DATE,
+	gender CHAR NOT NULL,
+	role CHAR NOT NULL,
+	PRIMARY KEY(user_id)
+);
+
+CREATE TABLE IF NOT EXISTS USER_IMAGE (
+	user_id BIGINT NOT NULL DEFAULT(0),
+	image_filename VARCHAR(20) NOT NULL DEFAULT('default_img.png'),
+	upload_date TIMESTAMP NOT NULL,
+	PRIMARY KEY(user_id, image_filename),
+	FOREIGN KEY(user_id) REFERENCES "user"(user_id)
+		ON DELETE SET DEFAULT
+		ON UPDATE CASCADE,
+	FOREIGN KEY(image_filename) REFERENCES IMAGE(filename)
+		ON DELETE SET DEFAULT
+		ON UPDATE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS "order" (
+	order_id BIGINT NOT NULL,
+	user_id BIGINT NOT NULL DEFAULT(0),
+	sub_total INT NOT NULL,
+	shipping_fee INT NOT NULL,
+	payment_type VARCHAR(2) NOT NULL,
+	address VARCHAR(50) NOT NULL,
+	order_date DATE NOT NULL,
+	ideal_rcv_date DATE,
+	PRIMARY KEY(order_id),
+	FOREIGN KEY(user_id) REFERENCES "user"(user_id)
+		ON DELETE SET DEFAULT
+		ON UPDATE CASCADE,
+	CHECK(sub_total >= 0),
+	CHECK(shipping_fee >= 0)
+);
+
+CREATE TABLE IF NOT EXISTS ORDER_STATUS_RECORD (
+	order_id BIGINT NOT NULL DEFAULT(0),
+	status CHAR NOT NULL,
+	status_date TIMESTAMP NOT NULL,
+	status_description VARCHAR(50) NOT NULL,
+	PRIMARY KEY(order_id, status, status_date, status_description),
+	FOREIGN KEY(order_id) REFERENCES "order"(order_id)
+		ON DELETE SET DEFAULT
+		ON UPDATE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS ORDER_CONTAINS (
+	order_id BIGINT NOT NULL DEFAULT(0),
+	clothes_id BIGINT NOT NULL DEFAULT(0),
+	color VARCHAR(2) NOT NULL DEFAULT('NA'),
+	size VARCHAR(2) NOT NULL DEFAULT('NA'),
+	purchase_qty INT NOT NULL,
+	PRIMARY KEY(order_id, clothes_id, color, size),
+	FOREIGN KEY(order_id) REFERENCES "order"(order_id)
+		ON DELETE SET DEFAULT
+		ON UPDATE CASCADE,
+	FOREIGN KEY(clothes_id, color, size) REFERENCES CLOTHES_COLOR_SIZE(clothes_id, color, size)
+		ON DELETE SET DEFAULT
+		ON UPDATE CASCADE,
+	CHECK(purchase_qty >= 0)
+);
+
+CREATE TABLE IF NOT EXISTS BAG (
+	user_id BIGINT NOT NULL DEFAULT(0),
+	clothes_id BIGINT NOT NULL DEFAULT(0),
+	color VARCHAR(2) NOT NULL DEFAULT('NA'),
+	size VARCHAR(2) NOT NULL DEFAULT('NA'),
+	purchase_qty INT NOT NULL,
+	PRIMARY KEY(user_id, clothes_id, color, size),
+	FOREIGN KEY(user_id) REFERENCES "user"(user_id)
+		ON DELETE SET DEFAULT
+		ON UPDATE CASCADE,
+	FOREIGN KEY(clothes_id, color, size) REFERENCES CLOTHES_COLOR_SIZE(clothes_id, color, size)
+		ON DELETE SET DEFAULT
+		ON UPDATE CASCADE,
+	CHECK(purchase_qty >= 0)
+);
+
+CREATE TABLE IF NOT EXISTS FAVORITE (
+	user_id BIGINT NOT NULL DEFAULT(0),
+	clothes_id BIGINT NOT NULL DEFAULT(0),
+	color VARCHAR(2) NOT NULL DEFAULT('NA'),
+	PRIMARY KEY(user_id, clothes_id, color),
+	FOREIGN KEY(user_id) REFERENCES "user"(user_id)
+		ON DELETE SET DEFAULT
+		ON UPDATE CASCADE,
+	FOREIGN KEY(clothes_id, color) REFERENCES CLOTHES_COLOR(clothes_id, color)
+		ON DELETE SET DEFAULT
+		ON UPDATE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS TRY_ON (
+	user_id BIGINT NOT NULL DEFAULT(0),
+	clothes_id BIGINT NOT NULL DEFAULT(0),
+	color VARCHAR(2) NOT NULL DEFAULT('NA'),
+	image_filename VARCHAR(20) NOT NULL DEFAULT('default_img.png'),
+	try_on_date TIMESTAMP NOT NULL,
+	PRIMARY KEY(user_id, clothes_id, color, image_filename),
+	FOREIGN KEY(user_id) REFERENCES "user"(user_id)
+		ON DELETE SET DEFAULT
+		ON UPDATE CASCADE,
+	FOREIGN KEY(clothes_id, color) REFERENCES CLOTHES_COLOR(clothes_id, color)
+		ON DELETE SET DEFAULT
+		ON UPDATE CASCADE,
+	FOREIGN KEY(image_filename) REFERENCES IMAGE(filename)
+		ON DELETE SET DEFAULT
+		ON UPDATE CASCADE
+);

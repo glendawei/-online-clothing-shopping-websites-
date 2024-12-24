@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In Form</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='/css/global.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='/css/signin.css')}}"> <!-- Link to external CSS file -->
+</head>
+
+<body class="signin-page">
+
+    <header class="header">
+        <div class="logo">
+            <a href="login">
+                <h1>Polaritique</h1>
+            </a>
+        </div>
+        <div class="account-title">
+            <h2>MY ACCOUNT</h2>
+        </div>
+    </header>
+
+    <main class="main-container">
+        <div class="box-container">
+            <div class="section sign-in-header">
+                <h3>SIGN UP</h3>
+            </div>
+
+            <form action="javascript: SignIn();">
+                <div class="section info-section">
+                <div class="input-field">
+                    <label for="first-name">First Name</label>
+                    <input type="text" id="first-name" name="first-name" required>
+                </div>
+                <div class="input-field">
+                    <label for="last-name">Last Name</label>
+                    <input type="text" id="last-name" name="last-name" required>
+                </div>
+                <div class="input-field">
+                    <label for="phone">Phone</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="input-field">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="input-field">
+                    <label for="birthday">Birthday</label>
+                    <input type="date" id="birthday" name="birthday" required>
+                </div>
+                <div class="input-field">
+                    <label for="gender">Gender</label>
+                    <select id="gender" name="gender" required>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="input-field">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                    <div class="note">Your password must be at least 8 characters long. It's recommended to include uppercase letters, lowercase letters, numbers, and special characters.</div>
+                </div>
+                <div class="input-field">
+                    <label for="confirm-password">Confirm Password</label>
+                    <input type="password" id="confirm-password" name="confirm-password" required>
+                </div>
+                <button type="submit" class="submit-button" id="submit-button">Submit</button>
+                </div>
+            </form>
+        </div>
+    </main>
+    <script src="{{url_for('static', filename='/js/global.js')}}"></script>
+    <script src="{{url_for('static', filename='/js/signin.js')}}"></script>
+</body>
+</html>

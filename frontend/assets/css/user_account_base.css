@@ -1,0 +1,220 @@
+body {
+    font-family: 'Times New Roman', Times, serif, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f3f3f3;
+    box-sizing: border-box;
+}
+
+.button {
+    font-family: 'Times New Roman', Times, serif, sans-serif;
+}
+
+.user-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Header Section */
+.header {
+    background-color: #000;
+    width: 100%;
+    /* padding: 15px 20px; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.header .logo {
+    position: absolute;
+    left: 24px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    margin: 0;
+}
+
+.header .account-title {
+    margin: 0 auto; /* Center align the title */
+    text-align: center; /* Center text within this element */
+    width: 100%; /* Allow centering by taking up full width */
+}
+
+.header .account-title h2 {
+    font-size: 20px;
+    text-transform: uppercase;
+    text-align: center;
+    color: #fff;
+    margin: 0;
+}
+
+/* .main-container {
+    width: 100%;
+    max-width: 660px;           
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    margin-top: 80px;            
+} */
+
+/* .sidebar { 
+    background-color: #f3f3f3;
+    padding: 20px;
+    width: 300px;
+    flex-shrink: 0; 
+}  */
+
+.main-container {
+    display: flex;
+    justify-content: center; /* 水平置中 */
+    align-items: stretch;    /* 垂直置中 */
+    min-height: 80vh;      /* 滿屏高度 */
+    gap: 40px;              /* 左右間距 */
+    padding: 20px;          /* 避免貼邊 */
+    box-sizing: border-box;
+}
+
+.sidebar {
+    position: sticky;
+    margin-top: 80px;
+    width: 300px;           /* 固定寬度 */
+    background-color: #f3f3f3;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.content {
+    /* flex-grow: 1;           表單佔據剩餘空間 */
+    max-width: 660px;       /* 表單最大寬度 */
+    background-color: #fff;
+    /* padding: 20px; */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    margin-top: 80px;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: left;
+    color: #000;
+    background-color: #fff;
+    border: none;
+    transition: background-color 0.3s;
+    width: 100%;
+    height: 100px;
+    margin: 10px;
+    position: relative;
+}
+
+.abbr { 
+    width: 100px; 
+    height: 60px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    margin-right: 10px;  
+    font-size: 24px; 
+    font-weight: bold;
+    position: absolute; 
+    left: -50px; 
+    top: 10px;
+    background: #d9d9d9;
+}
+
+.user-info .for-40px-space { 
+    margin-left: 40px; 
+    font-size: 20px; 
+}
+
+.background-layer { 
+    position: absolute; 
+    width: 100%; 
+    height: 80px; 
+    background-color: #e0e0e0; 
+    top: 0; 
+    left: 0; 
+    z-index: -1; 
+} 
+
+.grey-rectangle1{
+    position: absolute;
+    font-weight: bold;
+    top: 10px;
+    right : -10px; 
+    display: block;
+    background: #d9d9d9;
+    width: 100px;
+    height: 20px;
+    text-align: center;
+}
+
+.grey-rectangle2{
+    position: absolute;
+    font-weight: bold;
+    bottom: 10px;
+    left : -30px; 
+    display: block;
+    background: #d9d9d9;
+    width: 300px;
+    height: 10px;
+    text-align: center;
+}
+
+/* .content {
+    background-color: #fff;
+    width: flexibility;
+    margin-left: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+} */
+
+.clothing-collage {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.image-container { 
+    width: 660px; 
+    height: 80vh; 
+    overflow: hidden; 
+} 
+
+.image-container img { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+}
+
+.submit-button {
+    font-family: 'Times New Roman', Times, serif, sans-serif;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: left;
+    color: #000;
+    background-color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%;
+    height: 50px;
+    margin: 10px;
+}
+
+.submit-button:hover {
+    background-color: #d9d9d9;
+}
+
+.submit-button .sign-out-text { 
+    margin-left: 15px; 
+}

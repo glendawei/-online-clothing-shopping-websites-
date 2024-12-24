@@ -1,0 +1,149 @@
+/* Product Detail Styles */
+.product-detail {
+    display: flex;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.product-image {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.product-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    border: 2px solid #000;  /* Add border here */
+}
+
+.thumbnail-images {
+    display: flex;
+    margin-top: 10px;
+}
+
+.thumbnail-images img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.name-price {
+    display: flex; /* Enable flexbox */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center horizontally */
+    justify-content: center; /* Center vertically */
+    text-align: center; /* Align text inside */
+}
+
+/* Adjust the width of color and size dropdown */
+.product-options {
+    display: flex; /* Enable flexbox */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center horizontally */
+    justify-content: center; /* Center vertically */
+    text-align: center; /* Align text inside */
+    padding: 10px;
+    padding-bottom: 50px;
+}
+
+.product-options label {
+    text-align: left;
+    display: block; /* Ensures the label takes up the full width of the container */
+    width: 100%; /* Makes sure the label spans the width of its container */
+}
+
+.product-color select, 
+.product-size select, 
+.product-num input {
+    width: 45vw;         /* Take full width of the container */
+    padding: 8px;        /* Ensure consistent padding */
+    border: 1px solid #ccc; /* Standardize border */
+    box-sizing: border-box; /* Include padding and border in the width/height calculation */
+    font-size: 16px;     /* Ensure the text size matches */
+    height: 40px;        /* Explicitly set height for consistency */
+    appearance: none;    /* Remove browser-specific styles */
+}
+
+/* Remove spinner buttons from number input */
+.product-num input::-webkit-outer-spin-button,
+.product-num input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Reset spinner styles for Firefox */
+.product-num input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+.product-info {
+    flex: 2;
+    padding-left: 20px;
+}
+
+.product-info h1 {
+    font-size: 32px;
+    margin-top: 0px;
+    margin-bottom: 5px;
+}
+
+.product-info p {
+    font-size: 18px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+
+.product-actions-section {
+    width: 100%;
+    display: flex; /* Enable flexbox */
+    justify-content: center; /* Center the content horizontally */
+}
+
+.product-actions .btn {
+    flex-grow: 1; /* Make each button grow to fill available space */
+    padding: 10px; /* Adjust padding as needed */
+    font-size: 20px;
+}
+
+
+.product-actions {
+    width: 45vw;
+    display: flex; /* Enable flexbox */
+    align-items: center; /* Center horizontally */
+    justify-content: left; /* Center vertically */
+    text-align: center; /* Align text inside */
+    gap: 30px; /* Adjust the gap to your desired space between items */
+}
+
+.product-description-section {
+    width: 100%;
+    text-align: left; /* Align text inside */
+}
+
+.product-description {
+    width: 45vw;
+    align-items: left; /* Center horizontally */
+    justify-content: left; /* Center vertically */
+    text-align: left; /* Align text inside */
+    margin-left: 10px;
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+#add-to-favorites {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}

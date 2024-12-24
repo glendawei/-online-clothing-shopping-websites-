@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details - Polaritique</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='/css/global.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='/css/item.css')}}">
+    <!-- Add Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Header Section (Navigation and Search) -->
+    <header>
+        <!-- Logo Section -->
+        <div class="logo">
+            <a href="category">
+                <h1>Polaritique</h1>
+            </a>
+        </div>
+
+        <!-- Navigation Section -->
+        <nav class="nav-buttons">
+            <button class="go-back-btn">Go Back</button>
+        </nav>
+
+        <!-- Icons Section (Profile, Like, Bag) -->
+        <div class="icons">
+            <i class="fas fa-user" id="profile-icon"></i>
+            <i class="fas fa-heart" id="like-icon"></i>
+            <i class="fas fa-shopping-bag" id="bag-icon"></i>
+        </div>
+    </header>
+
+    <section class="categories" id="categories">
+
+    </section>
+
+    <!-- Product Details Section -->
+    <main>
+        <div class="product-detail">
+            <div class="product-image">
+                <img id="product-img" src="" alt="Product Image">
+            </div>
+            <div class="product-info">
+                <div class="name-price">
+                    <h1 id="product-name"></h2>
+                    <p id="product-price"></p>
+                </div>
+
+                <form action="javascript: addItemToBag();"> <!-- Included in form to enforce required and min max constraints -->
+                    <!-- Color and Size Options -->
+                    <div class="product-options">
+                        <div class="product-color">
+                            <label for="color">Color:</label>
+                            <select id="color" required></select>
+                        </div>
+                        <div class="product-size">
+                            <label for="size">Size:</label>
+                            <select id="size" required></select>
+                        </div>
+                        <div class="product-num">
+                            <label for="num">Num:</label>
+                            <input type="number" inputmode="numeric" id="num" min="1" max="100" required/>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="product-actions-section">
+                        <div class="product-actions">
+                            <button class="btn" id="add-to-bag" type="submit">Add to Bag</button>
+                            <button class="btn" id="try-on" type="button">Try On</button>
+                            <button class="btn" id="add-to-favorite" type="button">
+                                <i class="fas fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+                <div class="product-description-section">
+                    <div class="product-description">
+                        <h3>Product Details</h3>
+                        <p id="product-description"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Polaritique. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="about">About Us</a>
+                <a href="contact">Contact</a>
+                <a href="privacy-policy">Privacy Policy</a>
+                <a href="terms">Terms & Conditions</a>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- External JavaScript File -->
+    <script src="{{url_for('static', filename='/js/global.js')}}"></script>  <!-- Include global.js first -->
+    <script src="{{url_for('static', filename='/js/item.js')}}"></script>
+</body>
+</html>

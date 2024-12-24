@@ -1,0 +1,195 @@
+/* General Styles */
+/* body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    box-sizing: border-box;
+} */
+body {
+    font-family: 'Times New Roman', serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff; /* Light background color */
+    display: flex;
+    flex-direction: column; /* Enable flexible layout for the page structure */
+    min-height: 100vh; /* Ensure body covers at least the full viewport height */
+}
+
+.login-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Header Section */
+.header {
+    background-color: #000;
+    width: 100%;
+    /* padding: 15px 20px; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.header .logo {
+    position: absolute;
+    left: 24px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    margin: 0;
+}
+
+.header .account-title {
+    margin: 0 auto; /* Center align the title */
+    text-align: center; /* Center text within this element */
+    width: 100%; /* Allow centering by taking up full width */
+}
+
+.header .account-title h2 {
+    font-size: 20px;
+    text-transform: uppercase;
+    text-align: center;
+    color: #fff;
+    margin: 0;
+}
+
+
+/* Main Content */
+/*.main-container {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}*/
+
+/* Main Content */
+.main-container {
+    width: 100%;
+    max-width: 900px;           /* Set a larger max width for the two boxes */
+    display: flex;
+    flex-direction: column;      /* Stack boxes vertically */
+    align-items: center;         /* Center boxes horizontally */
+    gap: 30px;                   /* Add gap between the boxes */
+    margin-top: 80px;            /* Add more margin to accommodate fixed header */
+}
+
+/* Box Container */
+.box-container {
+    display: flex;
+    justify-content: center;     /* Align boxes to the center */
+    gap: 20px;                   /* Space between the two boxes */
+    width: 100%;                 /* Ensure full-width for responsiveness */
+}
+
+
+/* box */
+.box {
+    flex: 0 0 60%;               /* Reduce the width of each box to 45% */
+    background-color: #fff;
+    text-align: center;
+}
+
+.login-box {
+    order: 1;                    /* Optional, to ensure login box appears first */
+}
+
+.sign-in-box {
+    order: 2;                    /* Optional, to ensure sign-in box appears second */
+}
+
+/* Sections */
+.section {
+    background-color: #f3f3f3;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.login-header h3,
+.sign-in-header h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.account-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 15px;
+    height: 70%;
+}
+
+.new-user-section {
+    display: flex;
+    justify-content: center;  /* Center horizontally */
+    align-items: center;      /* Center vertically */
+    height: 70%;             /* Make sure it takes up the full height */
+}
+
+.input-field {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    gap: 5px;
+}
+
+.input-field label {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.input-field input {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    outline: none;
+}
+
+.submit-button {
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #000;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 50%;
+    margin: 0 auto;
+}
+
+.new-user-button {
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #000;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 50%
+}
+
+.submit-button:hover,
+.new-user-button:hover {
+    background-color: #444;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .box-container {
+        flex-direction: column;   /* Stack the boxes vertically */
+        gap: 20px;                /* Add space between stacked boxes */
+    }
+}

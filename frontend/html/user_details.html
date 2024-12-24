@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Account Base</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='/css/global.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='/css/user_details.css')}}"> <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="user-page">
+
+    <header class="header">
+        <div class="logo">
+            <a href="category">
+                <h1>Polaritique</h1>
+            </a>
+        </div>
+        <div class="account-title">
+            <h2>MY ACCOUNT</h2>
+        </div>
+        <div class="icons">
+            <i class="fas fa-user" id="profile-icon"></i>
+            <i class="fas fa-heart" id="like-icon"></i>
+            <i class="fas fa-shopping-bag" id="bag-icon"></i>
+        </div>
+    </header>
+
+    <div class="main-container"> 
+    <aside class="sidebar"> 
+        <button class="user-info"> 
+            <div class="abbr"><h3 id="First"></h3><h3 id="Last"></h3></div> 
+            <div><span class="for-40px-space">Hi! <h4 id="first-name-big"></h4> <h4 id="last-name-big"></h4></span></div>
+            <span class="grey-rectangle1"></span>
+            <span class="grey-rectangle2"></span>
+        </button> 
+        <button class="submit-button" onclick="window.location.href='user_details'">USER DETAILS</button>
+        <button class="submit-button" onclick="window.location.href='user_orders'">MY ORDERS</button>
+        <button class="submit-button" onclick="window.location.href='login'">
+            <i class="fas fa-arrow-left"></i>
+            <span class="sign-out-text">SIGN OUT</span>
+        </button>
+        
+    </aside> 
+        
+    <main class="content"> 
+            <form>
+                <div class="section">
+                    <h3>MY DETAILS</h3>
+                    <div class="note">Feel free to edit for your latest information so that you can keep up with the latest of Polaritique.</div>
+                </div>
+                <div class="input-field">
+                    <label for="first-name">First Name</label>
+                    <input type="text" id="first-name" name="first-name" required>
+                </div>
+                <div class="input-field">
+                    <label for="last-name">Last Name</label>
+                    <input type="text" id="last-name" name="last-name" required>
+                </div>
+                <div class="input-field">
+                    <label for="phone">Phone</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="input-field">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="input-field">
+                    <label for="birthday">Birthday</label>
+                    <input type="date" id="birthday" name="birthday" required>
+                </div>
+                <div class="input-field">
+                    <label for="gender">Gender</label>
+                    <select id="gender" name="gender" required>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <button type="submit" class="save-change" id="save-change">SAVE CHANGES</button>
+            </form>
+    </main> 
+    </div>
+    <script src="{{url_for('static', filename='/js/global.js')}}"></script>
+    <script src="{{url_for('static', filename='/js/user_details.js')}}"></script>
+</body>
+</html>

@@ -1,0 +1,128 @@
+
+main {
+  display: flex-shrink;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+  /*margin: 2em 0;*/
+  min-height: 100vh; /* main 至少填滿視口高度 */
+}
+
+.cart {
+  width: 60%;
+ 
+  background: #ffffff;
+  /*border: 1px solid #ddd;*/
+  padding: 1em;
+ 
+  margin-left: 10%;  /* 左邊距離是容器寬度的 10% */
+  margin-right: 30%;
+ 
+  box-sizing: border-box;
+  height: auto; /* 讓 .cart 高度隨內容改變 */
+}
+
+.cart-title {
+
+  width: 100%;
+
+  background-color:  #e2e2e2; /* 設置背景色 */
+  padding: 10px;  /* 設置內邊距 */
+  font-size: 20px;  /* 設置字體大小 */
+  font-weight: bold;  /* 設置字體加粗 */
+  text-align: center;  /* 文字置中 */
+  margin-bottom: 20px;  /* 設置與回傳內容的距離 */
+}
+
+.cart-item {
+  width: 100%;
+  background-color:  #e2e2e2; 
+  position: relative; /* Makes sure the remove button is positioned relative to this container */
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.item-details {
+  display: flex;
+  align-items: center;
+}
+
+.item-details img {
+  width: 100px;
+  height: 150px;
+  margin-right: 10px;
+}
+
+.item-details ul {
+  list-style: none;
+  padding: 0;
+  margin: 3em 0;  /* 添加上下外邊距，讓項目之間有更多間隔 */
+}
+
+.item-details li {
+  font-size: 14px;
+  color: #333;
+
+}
+
+
+.item-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  text-align: right;
+}
+
+.item-actions p {
+  margin-right: 10px;
+  font-size: 16px;
+  color: #000;
+}
+
+
+.remove-btn {
+  color: black; /* Make the 'X' black */
+  background-color: transparent; /* No background color */
+  border: none;
+  padding: 0; /* Remove padding */
+  font-size: 20px; /* Make the 'X' larger */
+  cursor: pointer;
+  position: absolute; /* Position it absolutely */
+  top: 5px; /* Adjust the distance from the top */
+  right: 5px; /* Adjust the distance from the right */
+}
+
+
+.remove-btn:hover {
+  color: #ff4d4d;             /* 在懸停時，字體顏色變為紅色 */
+}
+
+.summary {
+  width: 20%;                /* 設定寬度為容器寬度的 20% */
+  background: #e2e2e2;
+  border: 1px solid #ddd;
+  padding: 1em;
+  position: absolute;        /* 使用絕對定位 */
+  top: 100px;                /* 設定距離頂端的 100px */
+  right: 10%;                /* 設定右邊距離螢幕的 10% */
+}
+
+
+
+
+#checkout-btn {
+  background: #000;
+  color: #fff;
+  border: none;
+  padding: 1em;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 1em;
+}
+
+#checkout-btn:hover {
+  background: #333;
+}

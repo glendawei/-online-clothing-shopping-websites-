@@ -1,0 +1,82 @@
+.hidden {
+    opacity: 0; /* Fade out */
+    pointer-events: none; /* Prevent interaction */
+    transition: opacity 0.5s ease; /* Smooth fade-out effect */
+}
+
+#welcome-picture {
+    opacity: 1; /* Fully visible */
+    pointer-events: auto; /* Allow interaction */
+    transition: opacity 0.5s ease; /* Smooth fade-in effect */
+    padding: 5px;
+    background-color: #f9f9f9; /* Light background color */
+    border: 1px solid #ddd; /* Subtle border for definition */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    margin: 5px 5px 5px 5px; /* Centered and with space around */
+    max-width: 100%; /* Limit the width */
+    text-align: center; /* Center-align text */
+}
+
+.welcome-picture img {
+    max-width: 100%; /* Make the image responsive */
+    height: auto;
+    border-radius: 4px; /* Optional rounded corners for the image */
+    margin-bottom: 10px; /* Space between image and text */
+}
+
+.welcome-picture p {
+    font-size: 1.2rem; /* Slightly larger font size */
+    color: #333; /* Neutral text color */
+    margin: 0; /* Remove default margin */
+}
+
+/* Product Grid Section */
+.item-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Default behavior */
+    gap: 10px;
+    padding: 10px;
+}
+
+/* Adjust for smaller screens */
+@media (max-width: 768px) {
+    .item-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Fewer items fit naturally */
+    }
+}
+
+@media (max-width: 480px) {
+    .item-grid {
+        grid-template-columns: repeat(1, minmax(200px, 1fr)); /* One item per row */
+    }
+}
+
+
+.item-card {
+    border: 2px solid #000000;
+    padding: 5px;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 8px; /* Added rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+    position: relative;
+}
+
+.item-card:hover {
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Hover effect */
+}
+
+.item-card img {
+    width: 100%;
+    height: 75%;
+    object-fit: cover;
+    border-radius: 4px; /* Added rounded corners for images */
+}
+
+.item-card .price {
+    font-weight: bold;
+    color: #333;
+    margin-top: 10px;
+}

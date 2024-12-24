@@ -1,0 +1,239 @@
+/* Base Styles */
+body {
+    font-family: 'Times New Roman', serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff; /* Light background color */
+    display: flex;
+    flex-direction: column; /* Enable flexible layout for the page structure */
+    min-height: 100vh; /* Ensure body covers at least the full viewport height */
+}
+
+/* Main Content Wrapper */
+main {
+    flex: 1; /* Allow the main content to grow and push the footer to the bottom */
+}
+/* Header fixed at the top */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 10; /* Ensures it stays on top of other content */
+    background-color: #000;
+    color: #fff;
+    height: 60px; /* Adjust height as needed */
+    display: flex;
+    align-items: center;
+}
+
+.btn {
+    font-family: Times New Roman;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #ccc;
+}
+
+.btn:hover {
+    background-color: #555;
+}
+
+.logo {
+    margin-left: 20px; 
+    margin-right: 20px;/* Space between logo and the other elements */
+}
+
+.logo a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.logo a:hover {
+    color: inherit;
+}
+
+.logo h1 {
+    margin: 0px;
+    font-size: 24px; /* Adjust logo font size */
+}
+
+nav {
+    display: flex;
+    align-items: center; /* Ensures nav items are aligned vertically */
+}
+
+.nav-btn {
+    font-family: Times New Roman;
+    background-color: #000000;
+    border: none;
+    padding: 10px 20px;
+    color: #ffffff;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    height: 60px; 
+    width: 70px;
+}
+
+.nav-btn:hover {
+    background-color: #ccc;
+}
+
+.nav-btn.active {
+    background-color: #ffffff;
+    color: #000; /* Color when the button is pressed */
+}
+
+.go-back-btn {
+    font-family: Times New Roman;
+    background-color: #ffffff;
+    width: 70px;
+    border: none;
+    height: 60px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.go-back-btn:hover {
+    background-color: #ccc;
+}
+
+/* Search Bar */
+.search-bar {
+    display: flex;
+    align-items: center; /* Align input and icon vertically */
+    gap: 10px;
+    margin: 0 15px;
+}
+
+.search-bar input {
+    font-family: Times New Roman;
+    width: 300px;
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.search-bar i {
+    font-size: 20px;
+    color: #fff;
+}
+
+/* Icons Container */
+.icons {
+    display: flex;
+    justify-content: right;
+    margin-right: 20px;
+    flex-grow: 1;
+    gap: 15px;
+}
+
+.icons i {
+    font-size: 20px;
+    color: #fff;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.icons i:hover {
+    color: #ccc;
+}
+
+/* Sticky Categories Row */
+.categories {
+    position: sticky;
+    top: 60px; /* This should match the height of your header */
+    z-index: 9; /* Keep it below the header */
+    background-color: #555; /* Match the style */
+    display: flex;
+    align-items: center;
+}
+
+/* Categories Section */
+.categories {
+    display: flex;
+    background-color: #555;
+    height: 30px;
+}
+
+.categories .category {
+    font-family: Times New Roman;
+    background-color: #555;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+    width: 100px;
+    height: 100%;
+}
+
+.categories .category:hover {
+    background-color: #999;
+}
+
+.categories .category.active {
+    background-color: #888888; /* Color when the button is pressed */
+}
+
+.hidden {
+    display: none;
+}
+
+/* Footer Section */
+footer {
+    position: sticky;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 15px 10px;
+    margin-top: 20px;
+    font-family: Times New Roman;
+    font-size: 14px;
+    border-top: 1px solid #555; /* Optional: subtle border for separation */
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-links {
+    margin-top: 10px;
+}
+
+.footer-links a {
+    color: #ccc;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #fff;
+}
+
+.user-info .for-40px-space { 
+    margin-left: 40px; 
+    font-size: 20px; 
+}
+
+.for-40px-space {
+    display: flex; /* Use Flexbox for horizontal alignment */
+    gap: 5px;
+    align-items: center; /* Vertically align text with h4 */
+  }
+
+.for-40px-space h4 {
+margin: 0; /* Remove default margins for h4 */
+display: inline; /* Ensure inline behavior */
+}

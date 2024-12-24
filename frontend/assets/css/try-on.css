@@ -1,0 +1,38 @@
+
+.try-on-section {
+    margin: 40px auto;
+    max-width: 600px;
+    padding: 20px;
+    border: 2px solid #000000;
+    border-radius: 8px;
+}
+
+input[type="file"] {
+    margin: 20px 0;
+}
+
+.btn {
+    padding: 10px 20px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+button:disabled:hover, button:hover[disabled] {
+    background-color: #8f8f8f;
+}
+
+button:disabled, button[disabled] {
+    background-color: #8f8f8f;
+}
+
+#result-section {
+    margin-top: 20px;
+}
+
+#processed-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
