@@ -27,7 +27,7 @@ Many shopping platforms today allow consumers to purchase items without having t
   2. **AI Try-on Simulation**: After selecting a product, the interface provides a try-on feature. The user needs to upload their photo, and the selected product will be fitted onto the image using the AI API. (Note: since the API requires payment, testing may not be directly available after downloading).
   
   3. **Shopping Cart Functionality**: Users can select multiple favorite items to add to the shopping cart and proceed to checkout with a single click.
-# Demo
+# Demo Video
 
 [![Watch the video](https://img.youtube.com/vi/_cj7Jg1OYgw/1.jpg)](https://www.youtube.com/watch?v=_cj7Jg1OYgw)
 
