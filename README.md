@@ -29,7 +29,7 @@ Many shopping platforms today allow consumers to purchase items without having t
   3. **Shopping Cart Functionality**: Users can select multiple favorite items to add to the shopping cart and proceed to checkout with a single click.
 # Demo
 
-[![Watch the video](https://img.youtube.com/vi/_cj7Jg1OYgw/0.jpg)](https://www.youtube.com/watch?v=_cj7Jg1OYgw)
+[![Watch the video](https://img.youtube.com/vi/_cj7Jg1OYgw/1.jpg)](https://www.youtube.com/watch?v=_cj7Jg1OYgw)
 
 
 # Implement
