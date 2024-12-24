@@ -1,3 +1,8 @@
+# Introduction
+This project is a web application developed by Group B as part of a course at National Taiwan University (NTU). The application is designed to enhance the online shopping experience, with a focus on virtual try-on technology for clothing and accessories. Below are the details of the project's features and architecture.
+
+
+
 # Overview
 Many shopping platforms today allow consumers to purchase items without having to visit the store in person. However, when it comes to clothing, people often encounter issues where the size of the items they buy does not match their expectations. This platform focuses on enhancing the shopping experience by integrating existing APIs to provide users with virtual try-on technology. This allows customers to preview how clothing, accessories, and other products will look on them in a virtual environment. Customers can use their own photos to simulate the fit and appearance of items and choose the most suitable clothing based on their body shape and preferences. Overall, the platform aims to solve the problem of not being able to try on clothes while shopping online and to enhance the interaction between customers and brands.
 
